@@ -1,6 +1,5 @@
 express = require 'express'
 routes = require './routes'
-user = require './routes/user'
 http = require 'http'
 path = require 'path'
 
@@ -23,7 +22,6 @@ if 'development' == app.get 'env'
     app.use express.errorHandler()
 
 app.post '/v2/checkout', routes.checkout
-app.get '/users', user.list
 
 http.createServer(app).listen app.get('port'), () ->
     console.log 'Express server listening on port ' + app.get('port')
