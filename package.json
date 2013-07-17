@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node_modules/coffee-script/bin/coffee app.coffee"
+    "start": "node_modules/coffee-script/bin/coffee app.coffee",
+    "test": "./node_modules/.bin/mocha --reporter list --compilers coffee:coffee-script"
   },
   "dependencies": {
     "coffee-script": "1.6.x",
