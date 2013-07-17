@@ -10,5 +10,9 @@
     "express": "3.3.4",
     "jade": "*",
     "stylus": "*"
+  },
+  "devDependencies": {
+    "mocha": "1.12.x",
+    "supertest": "0.7.x"
   }
 }

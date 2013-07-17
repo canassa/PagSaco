@@ -4,7 +4,7 @@ user = require './routes/user'
 http = require 'http'
 path = require 'path'
 
-app = express()
+app = exports.app = express()
 
 # all environments
 app.set 'port', process.env.PORT or 3000
@@ -16,13 +16,13 @@ app.use express.bodyParser()
 app.use express.methodOverride()
 app.use app.router
 app.use require('stylus').middleware(__dirname + '/public')
-app.use express.static(path.join(__dirname, 'public'))
+app.use express.static path.join(__dirname, 'public')
 
 # development only
 if 'development' == app.get 'env'
     app.use express.errorHandler()
 
-app.get '/', routes.index
+app.post '/v2/checkout', routes.checkout
 app.get '/users', user.list
 
 http.createServer(app).listen app.get('port'), () ->
