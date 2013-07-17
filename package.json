@@ -1,0 +1,14 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/coffee-script/bin/coffee app.coffee"
+  },
+  "dependencies": {
+    "coffee-script": "1.6.x",
+    "express": "3.3.4",
+    "jade": "*",
+    "stylus": "*"
+  }
+}
