@@ -1,5 +1,9 @@
 
 exports.checkout = (req, res) ->
+    if req.body.email != 'ok' or req.body.token != 'ok'
+        res.send 401
+
+    res.send 200
     # charset = req.get('content-type').split(';')[1].split('=')[1]
     # console.log charset
 
@@ -8,4 +12,3 @@ exports.checkout = (req, res) ->
 
     # res.render 'index', title: 'PagSaco'
 
-    res.send 401

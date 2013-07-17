@@ -4,13 +4,13 @@ request = require 'supertest'
 
 
 describe 'POST /v2/checkout', () ->
-    it 'should return a 401 if the credentials are not provided', (done) ->
+    it 'should return a HTTP 401 if the credentials are not provided', (done) ->
         request(app)
             .post('/v2/checkout')
             .expect('Unauthorized')
             .expect(401, done)
 
-    it 'should return a 401 if the credentials are invalid', (done) ->
+    it 'should return a HTTP 401 if the credentials are invalid', (done) ->
         params =
             email: 'invalid'
             token: 'invalid'
@@ -20,3 +20,18 @@ describe 'POST /v2/checkout', () ->
             .send(params)
             .expect('Unauthorized')
             .expect(401, done)
+
+    it 'should return a HTTP 200 if the credentials are valid', (done) ->
+        params =
+            email: 'ok'
+            token: 'ok'
+            currency: 'BRL'
+            itemId1: '0001'
+            itemDescription1: 'PHP Developer'
+            itemAmount1: '100.00'
+            itemQuantity1: '1'
+
+        request(app)
+            .post('/v2/checkout')
+            .send(params)
+            .expect(200, done)
