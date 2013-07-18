@@ -2,6 +2,9 @@ express = require 'express'
 routes = require './routes'
 http = require 'http'
 path = require 'path'
+jade = require 'jade'
+
+jade.doctypes.xml = '<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>';
 
 app = exports.app = express()
 

@@ -10,10 +10,12 @@
     "coffee-script": "1.6.x",
     "express": "3.3.4",
     "jade": "*",
-    "stylus": "*"
+    "stylus": "*",
+    "xml2js": "0.2.x"
   },
   "devDependencies": {
     "mocha": "1.12.x",
-    "supertest": "0.7.x"
+    "chai": "1.7.x",
+    "chai-http": "0.4.x"
   }
 }
